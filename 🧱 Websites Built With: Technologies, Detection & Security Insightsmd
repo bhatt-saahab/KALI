@@ -1,0 +1,114 @@
+---
+
+> Understand how websites expose their structure, how tools detect technologies, and what it means for security.
+> 
+
+---
+
+## 📁 1. Common Website Files & Their Purpose
+
+| 🔹 File Name | 📌 Purpose |
+| --- | --- |
+| `readme.html` | HTML page with project info, version, authors — like a digital brochure. |
+| `readme.txt` | Text-based instructions about website/software — simple and accessible. |
+| `readme.md` | Markdown file often seen in GitHub projects — formatted README. |
+| `license.txt` | Legal terms of use, license agreements, author rights. |
+| `feed.xml` / `rss.xml` | Syndication feed for blogs/news — used by feed readers. |
+
+🔐 **Security Risk**
+
+- **Info Disclosure:** Version, server info helps hackers find weaknesses.
+- **Fingerprinting:** Used to profile technologies.
+- **Example:** If `readme.html` shows WordPress 5.4, attacker may search for known exploits in that version.
+
+---
+
+## 🛡️ 2. Website Technology Detection Tools
+
+These tools help identify **CMS**, **frameworks**, **plugins**, **analytics**, and **server details** used in a website.
+
+### 🔍 2.1 BuiltWith
+
+🌐 [builtwith.com](https://builtwith.com/)
+
+- **How it Works:** Scans HTTP headers, HTML, JavaScript, and links.
+- **What it Detects:** CMS, CDNs, analytics, widgets, SSL certs, and hosting.
+- **Use Cases:**
+    - 💼 Market/competitor research
+    - 📈 Tech trend analysis
+    - 🧲 Lead generation
+
+🧩 **Browser Add-ons**
+
+- Chrome & Firefox extensions available.
+
+---
+
+### 🔍 2.2 Wappalyzer
+
+🌐 [wappalyzer.com](https://www.wappalyzer.com/)
+
+- **Features:**
+    - Detects 100s of technologies: CMS, eCommerce, JS frameworks, etc.
+    - Real-time analysis via browser extension.
+- **Use Cases:** Web audits, competitive analysis, red-teaming.
+
+🧩 **Browser Add-ons:** Chrome, Firefox
+
+---
+
+### 🔍 2.3 WhatRuns
+
+🔗 Available as **browser extension**
+
+- **Highlights:**
+    - Detects fonts, plugins, themes (especially WordPress), analytics tools.
+    - Clean, minimal, and beginner-friendly.
+
+📦 Real-Life: Useful for frontend developers or designers exploring how a site is styled or built.
+
+---
+
+### 🔍 2.4 WhatWeb (CLI Tool)
+
+📦 GitHub: [WhatWeb on GitHub](https://github.com/urbanadventurer/WhatWeb)
+
+💻 Command-line tool for **penetration testers** and **admins**
+
+- **Use Case:** Scans and identifies tech via CLI for fast automation.
+- **Supports:** Plugins for deep fingerprinting.
+
+📘 **Basic Usage:**
+
+```bash
+whatweb https://example.com
+
+```
+
+---
+
+## 🔐 Security Implications
+
+| ⚠️ Risk Type | 📌 Description |
+| --- | --- |
+| 🧾 Information Disclosure | Revealing versions or frameworks can give attackers entry points. |
+| 🧠 Technology Fingerprinting | Makes it easy to identify CMS (like WordPress), DBs, or frameworks used. |
+| 🤖 Automation Tools | Scanners like **WhatWeb** and **BuiltWith** automate these detections. |
+
+---
+
+## 👨‍💻 Real-World Example
+
+A hacker scans a company blog and finds `readme.txt` exposing **Drupal 7.3** → this version is outdated → attacker searches for CVEs → potential exploit path.
+
+---
+
+## 💬 Bonus Tip: Use ChatGPT to Analyze Technologies
+
+You can paste page source or headers and ask:
+
+🧠 **“ChatGPT, can you analyze which technologies this site might be using?”**
+
+---
+
+Let me know if you'd like a GitHub `README.md` format or PDF export!
